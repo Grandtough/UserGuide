@@ -39,7 +39,13 @@ jobs:
         if [ -f doc/requirements.txt ]; then
           pip install -r doc/requirements.txt
         fi
-
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install sphinx sphinx-rtd-theme mdanalysis nbsphinx matplotlib sphinxcontrib-bibtex myst-parser IPython mdanalysis-sphinx-theme sphinx-sitemap
+        if [ -f doc/requirements.txt ]; then
+          pip install -r doc/requirements.txt
+        fi
     - name: Install LaTeX (for PDF generation)
       run: |
         sudo apt-get update
