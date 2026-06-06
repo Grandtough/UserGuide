@@ -72,4 +72,3 @@ jobs:
           git commit -m "docs: update PDF documentation [skip ci]"
           git push
         fi
-        
